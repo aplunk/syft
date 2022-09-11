@@ -6,7 +6,7 @@ import (
 )
 
 type FileMetadata struct {
-	Cataloger catalogerOptions `yaml:"cataloger" json:"cataloger" mapstructure:"cataloger"`
+	Cataloger CatalogerOptions `yaml:"cataloger" json:"cataloger" mapstructure:"cataloger"`
 	Digests   []string         `yaml:"digests" json:"digests" mapstructure:"digests"`
 }
 

@@ -6,9 +6,9 @@ import (
 	"os"
 
 	"github.com/anchore/syft/cmd/syft/cli/options"
-	"github.com/anchore/syft/internal/config"
 	"github.com/anchore/syft/internal/log"
 	"github.com/anchore/syft/syft"
+	"github.com/anchore/syft/syft/pkg/config"
 )
 
 func Run(ctx context.Context, app *config.Application, args []string) error {

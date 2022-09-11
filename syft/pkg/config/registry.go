@@ -18,20 +18,20 @@ type RegistryCredentials struct {
 	Token string `yaml:"-" json:"-" mapstructure:"token"`
 }
 
-type registry struct {
+type Registry struct {
 	InsecureSkipTLSVerify bool                  `yaml:"insecure-skip-tls-verify" json:"insecure-skip-tls-verify" mapstructure:"insecure-skip-tls-verify"`
 	InsecureUseHTTP       bool                  `yaml:"insecure-use-http" json:"insecure-use-http" mapstructure:"insecure-use-http"`
 	Auth                  []RegistryCredentials `yaml:"auth" json:"auth" mapstructure:"auth"`
 }
 
-func (cfg registry) loadDefaultValues(v *viper.Viper) {
+func (cfg Registry) loadDefaultValues(v *viper.Viper) {
 	v.SetDefault("registry.insecure-skip-tls-verify", false)
 	v.SetDefault("registry.insecure-use-http", false)
 	v.SetDefault("registry.auth", []RegistryCredentials{})
 }
 
 //nolint:unparam
-func (cfg *registry) parseConfigValues() error {
+func (cfg *Registry) parseConfigValues() error {
 	// there may be additional credentials provided by env var that should be appended to the set of credentials
 	authority, username, password, token :=
 		os.Getenv("SYFT_REGISTRY_AUTH_AUTHORITY"),
@@ -57,7 +57,7 @@ func hasNonEmptyCredentials(username, password, token string) bool {
 	return password != "" && username != "" || token != ""
 }
 
-func (cfg *registry) ToOptions() *image.RegistryOptions {
+func (cfg *Registry) ToOptions() *image.RegistryOptions {
 	var auth = make([]image.RegistryCredentials, len(cfg.Auth))
 	for i, a := range cfg.Auth {
 		auth[i] = image.RegistryCredentials{

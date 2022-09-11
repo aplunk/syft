@@ -10,7 +10,7 @@ import (
 )
 
 // IMPORTANT: do not show the password in any YAML/JSON output (sensitive information)
-type attest struct {
+type Attest struct {
 	KeyRef                   string `yaml:"key" json:"key" mapstructure:"key"` // same as --key, file path to the private key
 	Cert                     string `yaml:"cert" json:"cert" mapstructure:"cert"`
 	NoUpload                 bool   `yaml:"no_upload" json:"noUpload" mapstructure:"no_upload"`
@@ -27,7 +27,7 @@ type attest struct {
 	OIDCRedirectURL          string `yaml:"oidc_redirect_url" json:"OIDCRedirectURL" mapstructure:"oidc_redirect_url"`
 }
 
-func (cfg *attest) parseConfigValues() error {
+func (cfg *Attest) parseConfigValues() error {
 	if cfg.KeyRef != "" {
 		expandedPath, err := homedir.Expand(cfg.KeyRef)
 		if err != nil {
@@ -46,7 +46,7 @@ func (cfg *attest) parseConfigValues() error {
 	return nil
 }
 
-func (cfg attest) loadDefaultValues(v *viper.Viper) {
+func (cfg Attest) loadDefaultValues(v *viper.Viper) {
 	v.SetDefault("attest.key", "")
 	v.SetDefault("attest.password", "")
 	v.SetDefault("attest.fulcio_url", options.DefaultFulcioURL)

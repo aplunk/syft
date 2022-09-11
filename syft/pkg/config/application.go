@@ -44,18 +44,18 @@ type Application struct {
 	OutputTemplatePath string             `yaml:"output-template-path" json:"output-template-path" mapstructure:"output-template-path"` // -t template file to use for output
 	File               string             `yaml:"file" json:"file" mapstructure:"file"`                                                 // --file, the file to write report output to
 	CheckForAppUpdate  bool               `yaml:"check-for-app-update" json:"check-for-app-update" mapstructure:"check-for-app-update"` // whether to check for an application update on start up or not
-	Anchore            anchore            `yaml:"anchore" json:"anchore" mapstructure:"anchore"`                                        // options for interacting with Anchore Engine/Enterprise
+	Anchore            Anchore            `yaml:"anchore" json:"anchore" mapstructure:"anchore"`                                        // options for interacting with Anchore Engine/Enterprise
 	Dev                development        `yaml:"dev" json:"dev" mapstructure:"dev"`
 	Log                logging            `yaml:"log" json:"log" mapstructure:"log"` // all logging-related options
 	Catalogers         []string           `yaml:"catalogers" json:"catalogers" mapstructure:"catalogers"`
-	Package            pkg                `yaml:"package" json:"package" mapstructure:"package"`
+	Package            Pkg                `yaml:"package" json:"package" mapstructure:"package"`
 	FileMetadata       FileMetadata       `yaml:"file-metadata" json:"file-metadata" mapstructure:"file-metadata"`
-	FileClassification fileClassification `yaml:"file-classification" json:"file-classification" mapstructure:"file-classification"`
-	FileContents       fileContents       `yaml:"file-contents" json:"file-contents" mapstructure:"file-contents"`
-	Secrets            secrets            `yaml:"secrets" json:"secrets" mapstructure:"secrets"`
-	Registry           registry           `yaml:"registry" json:"registry" mapstructure:"registry"`
+	FileClassification FileClassification `yaml:"file-classification" json:"file-classification" mapstructure:"file-classification"`
+	FileContents       FileContents       `yaml:"file-contents" json:"file-contents" mapstructure:"file-contents"`
+	Secrets            Secrets            `yaml:"secrets" json:"secrets" mapstructure:"secrets"`
+	Registry           Registry           `yaml:"registry" json:"registry" mapstructure:"registry"`
 	Exclusions         []string           `yaml:"exclude" json:"exclude" mapstructure:"exclude"`
-	Attest             attest             `yaml:"attest" json:"attest" mapstructure:"attest"`
+	Attest             Attest             `yaml:"attest" json:"attest" mapstructure:"attest"`
 	Platform           string             `yaml:"platform" json:"platform" mapstructure:"platform"`
 }
 

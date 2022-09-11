@@ -5,15 +5,15 @@ import (
 	"github.com/spf13/viper"
 )
 
-type fileClassification struct {
-	Cataloger catalogerOptions `yaml:"cataloger" json:"cataloger" mapstructure:"cataloger"`
+type FileClassification struct {
+	Cataloger CatalogerOptions `yaml:"cataloger" json:"cataloger" mapstructure:"cataloger"`
 }
 
-func (cfg fileClassification) loadDefaultValues(v *viper.Viper) {
+func (cfg FileClassification) loadDefaultValues(v *viper.Viper) {
 	v.SetDefault("file-classification.cataloger.enabled", catalogerEnabledDefault)
 	v.SetDefault("file-classification.cataloger.scope", source.SquashedScope)
 }
 
-func (cfg *fileClassification) parseConfigValues() error {
+func (cfg *FileClassification) parseConfigValues() error {
 	return cfg.Cataloger.parseConfigValues()
 }

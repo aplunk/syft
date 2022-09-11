@@ -4,10 +4,10 @@ import (
 	"crypto"
 	"fmt"
 
-	"github.com/anchore/syft/internal/config"
 	"github.com/anchore/syft/syft"
 	"github.com/anchore/syft/syft/artifact"
 	"github.com/anchore/syft/syft/file"
+	"github.com/anchore/syft/syft/pkg/config"
 	"github.com/anchore/syft/syft/sbom"
 	"github.com/anchore/syft/syft/source"
 )

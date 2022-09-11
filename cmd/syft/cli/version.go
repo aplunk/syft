@@ -8,8 +8,8 @@ import (
 
 	"github.com/anchore/syft/cmd/syft/cli/options"
 	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/config"
 	"github.com/anchore/syft/internal/version"
+	"github.com/anchore/syft/syft/pkg/config"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

@@ -2,7 +2,7 @@ package config
 
 import "github.com/spf13/viper"
 
-type anchore struct {
+type Anchore struct {
 	// upload options
 	Host string `yaml:"host" json:"host" mapstructure:"host"` // -H , hostname of the engine/enterprise instance to upload to (setting this value enables upload)
 	Path string `yaml:"path" json:"path" mapstructure:"path"` // override the engine/enterprise API upload path
@@ -16,6 +16,6 @@ type anchore struct {
 	// , customize the number of seconds within which the SBOM import must be completed or canceled
 }
 
-func (cfg anchore) loadDefaultValues(v *viper.Viper) {
+func (cfg Anchore) loadDefaultValues(v *viper.Viper) {
 	v.SetDefault("anchore.path", "")
 }

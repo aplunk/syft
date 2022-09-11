@@ -7,7 +7,6 @@ import (
 	"testing"
 
 	"github.com/anchore/syft/cmd/syft/cli/convert"
-	"github.com/anchore/syft/internal/config"
 	"github.com/anchore/syft/internal/formats/cyclonedxjson"
 	"github.com/anchore/syft/internal/formats/cyclonedxxml"
 	"github.com/anchore/syft/internal/formats/spdx22json"
@@ -15,6 +14,7 @@ import (
 	"github.com/anchore/syft/internal/formats/syftjson"
 	"github.com/anchore/syft/internal/formats/table"
 	"github.com/anchore/syft/syft"
+	"github.com/anchore/syft/syft/pkg/config"
 	"github.com/anchore/syft/syft/sbom"
 	"github.com/anchore/syft/syft/source"
 	"github.com/stretchr/testify/require"

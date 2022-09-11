@@ -2,8 +2,8 @@ package options
 
 import (
 	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/config"
 	"github.com/anchore/syft/internal/log"
+	"github.com/anchore/syft/syft/pkg/config"
 )
 
 func IsVerbose(app *config.Application) (result bool) {
