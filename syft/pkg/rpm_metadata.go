@@ -39,6 +39,8 @@ type RpmMetadata struct {
 	Files           []RpmdbFileRecord `json:"files"`
 }
 
+type RpmdbMetadata = RpmMetadata
+
 // RpmdbFileRecord represents the file metadata for a single file attributed to a RPM package.
 type RpmdbFileRecord struct {
 	Path      string        `json:"path"`

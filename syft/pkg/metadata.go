@@ -18,6 +18,7 @@ const (
 	JavaMetadataType             MetadataType = "JavaMetadata"
 	NpmPackageJSONMetadataType   MetadataType = "NpmPackageJsonMetadata"
 	RpmMetadataType              MetadataType = "RpmMetadata"
+	RpmdbMetadataType            MetadataType = "RpmdbMetadata"
 	DartPubMetadataType          MetadataType = "DartPubMetadata"
 	DotnetDepsMetadataType       MetadataType = "DotnetDepsMetadata"
 	PythonPackageMetadataType    MetadataType = "PythonPackageMetadata"
@@ -60,6 +61,7 @@ var MetadataTypeByName = map[MetadataType]reflect.Type{
 	JavaMetadataType:             reflect.TypeOf(JavaMetadata{}),
 	NpmPackageJSONMetadataType:   reflect.TypeOf(NpmPackageJSONMetadata{}),
 	RpmMetadataType:              reflect.TypeOf(RpmMetadata{}),
+	RpmdbMetadataType:            reflect.TypeOf(RpmdbMetadata{}),
 	DartPubMetadataType:          reflect.TypeOf(DartPubMetadata{}),
 	DotnetDepsMetadataType:       reflect.TypeOf(DotnetDepsMetadata{}),
 	PythonPackageMetadataType:    reflect.TypeOf(PythonPackageMetadata{}),
